@@ -1,8 +1,63 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <!-- Heading -->
 
 <center><h1>The right shoes for you are:</h1><center>
+    <!-- user edits the image to a new one when the button is clicked -->
 
+            <div class="randomimage">
+                    <div class="stuff">
+                      <div id="output"></div>
+                      <img src="http://scstylecaster.files.wordpress.com/2014/05/toy-shoes.png?wu003d1024u0026hu003d576" />
+                    </div>
+                  </div>
+
+ 
+    <!-- styling for the results page -->
+
+        <style type="text/css">
+            @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+
+                body {
+                margin: 0;
+                height: 100%;
+                background: #4c4c4d;
+                }
+
+                .randomimage {
+                width: 100%;
+                position: absolute;
+                text-align: center;
+                }
+
+                .randomimage img {
+                display: block;
+                margin: 100px auto;
+                max-height: 800px;
+                max-width: 800px;
+                }
+
+                #output { 
+                color: white;
+                margin: 20px 0;
+                font-size: 20px;
+                font-weight: bold;
+                }
+
+                input[type="button"] {
+                color: white;
+                background-color: transparent;
+                border: 3px solid white;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 22px;
+                font-weight: 600;
+                padding: 15px;
+                margin: 50px auto 0 auto;
+                cursor: pointer;
+                }
+        </style>
+
+       
 
 {% endblock %}

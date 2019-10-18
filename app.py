@@ -80,7 +80,18 @@ def results():
 
 @app.route('/real_results')
 def real_results():
+    """
+    takes the user to a different results page
+    """
     return render_template('real_results.html')
+
+@app.route('/more_results/')
+def more_results():
+    """
+    Takes the user to a different results page
+    """
+    return render_template('more_results.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
