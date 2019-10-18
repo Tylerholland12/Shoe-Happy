@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Ineteractive grid where the user is ablt to create the size blocks they want to and also to update the size blocks that they want by 
+sliding the curser.
+ -->
+
+<head>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-deep_orange.min.css" />
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    
+        <style type="text/css">
+            button {
+                color: white;
+                margin-top: 10px;
+            }
+            .center {
+                display: table;
+                margin: 0 auto;
+                padding: 20px;
+            }
+        </style>
+    
+        <script type="text/javascript">
+        </script>
+    
+        <script>
+            function generate() {
+                var canvas = document.getElementById("myCanvas");
+                var ctx = canvas.getContext("2d");
+                var blockSize = parseInt(document.getElementById("s1").value) * 2;
+                var imageSize = 512;
+                var colorSpectrum = 200;
+                var palette = [0, 255];
+                console.log(blockSize);
+                for (var x = 0; x < imageSize; x += blockSize) {
+                    for (var y = 0; y < imageSize; y += blockSize) {
+                        if (document.getElementById('option-1').checked) {
+                            // black and white
+                            color = Math.round(Math.random() * 1) * 255;
+                            ctx.fillStyle = 'rgb(' + color + ',' + color + ',' + color + ')';
+                        }
+                        if (document.getElementById('option-2').checked) {
+                            // greyscale
+                            color = Math.floor(Math.random() * colorSpectrum);
+                            ctx.fillStyle = 'rgb(' + color + ',' + color + ',' + color + ')';
+                        }
+                        if (document.getElementById('option-3').checked) {
+                            // full
+                            ctx.fillStyle = 'rgb(' + Math.floor(Math.random() * colorSpectrum) + ',' + Math.floor(Math.random() * colorSpectrum) + ',' + Math.floor(Math.random() * colorSpectrum) + ')';
+                        }
+                        ctx.fillRect(x, y, blockSize, blockSize);
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body onload="generate()">
+    
+        <div class="center">
+            <h1>Quick fun</h1>
+            <canvas id="myCanvas" width="512" height="512" style="border:1px solid #c3c3c3;">
+                Your browser does not support the canvas element.
+            </canvas>
+    
+            <br/>
+            <form>
+                <span>Colors</span>
+                <fieldset>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                            <input class="mdl-radio__button" type="radio" id="option-1" name="options" value="1" />
+                            <span class="mdl-radio__label">Black and White</span>
+                        </label>
+                    <br>
+    
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                            <input class="mdl-radio__button" type="radio" id="option-2" name="options" value="2" />
+                            <span class="mdl-radio__label">Greyscale</span>
+                        </label>
+                    <br>
+    
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                            <input class="mdl-radio__button" type="radio" id="option-3" name="options" value="3" checked="checked"/>
+                            <span class="mdl-radio__label">True Color</span>
+                    </label>
+                </fieldset>
+            </form>
+    
+            <br>
+            <p style="width:300px">
+                <label for="s1">Block Size</label>
+                <input class="mdl-slider mdl-js-slider" type="range" id="s1" min="1" max="64" value="16" step="1">
+            </p>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" id="calculate" onclick="generate()">Generate</button>
+        </div>
+    </body>
+
+
+    {% endblock %}

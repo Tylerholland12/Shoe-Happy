@@ -26,6 +26,7 @@ def home():
     """
     Takes the user to the home/main page of the website
     """
+
     return render_template('main.html')
 
 @app.route('/questions', methods=['GET', 'POST'])
@@ -43,11 +44,6 @@ def question_category():
     """
     This takes the user to the question category page
     """
-    # question = [
-    #     'Do you like the feeling of floating on a cloud?'
-    #     'Do you prefer to be the one watching a race or in the race?'
-    #     'Do you like walking on rocks?'
-    # ]
     return render_template('question_category.html')
 
 @app.route('/comfort')
@@ -92,6 +88,10 @@ def more_results():
     """
     return render_template('more_results.html')
 
+@app.route('/fun')
+def fun():
+    return render_template('fun.html')
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
