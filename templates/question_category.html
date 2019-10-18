@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center><h1>Please Select A Category!</h1><center>
+        <form>
+                <br>
+                <br>
+                <br><br>
+                    <!-- Button that takes users to the comfort questons -->
+
+        <div class='form-group'>
+                <button class='btn btn-primary'  formaction="comfort" type='submit'>Questions For Comfort</button>
+            </div>
+            <br>
+            <br>
+                <!-- Button that takes users to the style questons -->
+
+            <div class='form-group'>
+                <button class='btn btn-primary'  formaction="style" type='submit'>Questions For Style</button>
+            </div>
+            <br>
+            <br>
+                <!-- Button that takes users to the needs questions -->
+
+            <div class='form-group'>
+                <button class='btn btn-primary'  formaction="needs" type='submit'>Questions For Needs</button>
+            </div>
+
+{% endblock %}

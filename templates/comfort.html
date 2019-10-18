@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Heading -->
+
+<center><h1>Shoe Comfort Questions</h1><center>
+    <!-- Multiple choice questons for comfort -->
+
+
+        <form action="grade.php" method="POST" id="quiz">
+                <P>1. Choose the one that best relates to you:<BR>
+                    <input type="checkbox" name="1.Choose the one that best relates to you" value="You like to  get to where you need to be right away">You like to  get to where you need to be right away<BR>
+                    <input type="checkbox" name="1.Choose the one that best relates to you" value="You like to be one with nature">You like to be one with nature<BR>
+                    <input type="checkbox" name="1.Choose the one that best relates to you" value="You like to take your time">You like to take your time<BR>
+                    <input type="checkbox" name="1.Choose the one that best relates to you" value="You enjoy a nice evening with family">You enjoy a nice evening with family<BR>
+                    </p>
+                    
+                    <P>2. Choose the one that best relates to your lifestyle:<BR>
+                    <input type="checkbox" name="2. Choose the one that best relates to your lifestyle" value="Adventerous">Adventerous<BR>
+                    <input type="checkbox" name="2. Choose the one that best relates to your lifestyle" value="Laid-back">Laid-back<BR>
+                    <input type="checkbox" name="2. Choose the one that best relates to your lifestyle" value="Workaholic">Workaholic<BR>
+                    <input type="checkbox" name="2. Choose the one that best relates to your lifestyle" value="In the water all day everyday">In the water all day everyday<BR>
+                    </p>
+                    
+                    <P>3. Pick the material that you are attracted to the most:<BR>
+                    <input type="checkbox" name="3. Pick the material that you are attracted to the most" value="Cotton">Cotton<BR>
+                    <input type="checkbox" name="3. Pick the material that you are attracted to the most" value="Leather">Leather<BR>
+                    <input type="checkbox" name="3. Pick the material that you are attracted to the most" value="Cork">Cork<BR>
+                    <input type="checkbox" name="3. Pick the material that you are attracted to the most" value="Nylon">Nylon<BR>
+                    </p>
+                    
+                    <br>
+                    
+                <!-- Button that deletes the answers -->
+
+                    <input class='btn btn-primary'  type="reset" value="Clear Form">
+                    
+                    </form>
+                    </body>
+                    </html>
+            
+             <form>
+                 <br>
+                     <!-- Button that takes the user to the results page -->
+
+                    <button class='btn btn-primary'  formaction="results/" type='submit'>Submit Quiz</button>
+         
+
+
+
+{% endblock %}
